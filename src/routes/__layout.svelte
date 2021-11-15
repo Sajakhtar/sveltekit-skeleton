@@ -1,10 +1,8 @@
-<header>
-  <h1>Welcome</h1>
-  <nav>
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-  </nav>
-</header>
+<script>
+  import Header from '$lib/Header.svelte';
+</script>
+
+<Header />
 
 <main>
   <slot />

@@ -12,3 +12,10 @@
 <footer>
   Copyright 2021
 </footer>
+
+
+<style>
+  footer {
+    background-color: gray;
+  }
+</style>

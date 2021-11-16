@@ -15,6 +15,11 @@
 
 
 <style>
+
+  /* :global(header) {
+    background-color: gray;
+  } */
+
   footer {
     background-color: gray;
   }

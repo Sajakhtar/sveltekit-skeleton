@@ -7,7 +7,8 @@
 </header>
 
 
-<style lang="scss">
+<!-- <style lang="scss">
+
   header {
     background-color: gray;
 
@@ -15,4 +16,4 @@
       background-color: greenyellow;
     }
   }
-</style>
+</style> -->

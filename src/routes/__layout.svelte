@@ -1,5 +1,6 @@
 <script>
   import Header from '$lib/Header.svelte';
+  import '../tailwind.css';
 </script>
 
 <Header />
@@ -20,7 +21,7 @@
     background-color: gray;
   } */
 
-  footer {
+  /* footer {
     background-color: gray;
-  }
+  } */
 </style>

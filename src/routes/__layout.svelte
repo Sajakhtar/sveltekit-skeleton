@@ -5,7 +5,7 @@
 
 <Header />
 
-<main>
+<main class="bg-blue-400">
   <slot />
 </main>
 

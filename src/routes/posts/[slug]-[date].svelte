@@ -1,1 +1,1 @@
-<h3>Slug Detail</h3>
+<h3>Slug date Detail</h3>

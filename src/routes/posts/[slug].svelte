@@ -37,6 +37,8 @@ import { page } from "$app/stores";
 </script>
 
 <script>
+  import Hello from '../../posts/hello.md';
+
   // need to export returned data to make it available to html
   export let post;
 </script>
@@ -44,3 +46,5 @@ import { page } from "$app/stores";
 <h3>{post.title}</h3>
 
 <p>{post.body}</p>
+
+<Hello />

@@ -20,31 +20,35 @@ import { page } from "$app/stores";
  // goal of load function is to load data to make it available before it's been rendered on serverside
 
   export async function load({ page }) {
-    const post = {
-      title: page.params.slug,
-      date: new Date(),
-      body: 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum'
-    };
+    const Hello = (await import(`../../posts/${page.params.slug}.md`)).default;
+
+    // const post = {
+    //   title: page.params.slug,
+    //   date: new Date(),
+    //   body: 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum'
+    // };
 
     // common use case here is to hit an API and return the data as props
 
     return {
       props: {
-        post
+        Hello,
+        // post
       }
     }
   }
 </script>
 
 <script>
-  import Hello from '../../posts/hello.md';
+  // import Hello from '../../posts/hello.md';
 
   // need to export returned data to make it available to html
-  export let post;
+  export let Hello;
+  // export let post;
 </script>
 
-<h3>{post.title}</h3>
+<!-- <h3>{post.title}</h3> -->
 
-<p>{post.body}</p>
+<!-- <p>{post.body}</p> -->
 
 <Hello />

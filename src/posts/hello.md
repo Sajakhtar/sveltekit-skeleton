@@ -1,5 +1,6 @@
 ---
 title: Hello World Post
+slug: hello
 ---
 
 

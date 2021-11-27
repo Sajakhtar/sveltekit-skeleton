@@ -20,24 +20,43 @@ import { page } from "$app/stores";
  // goal of load function is to load data to make it available before it's been rendered on serverside
 
   export async function load({ page }) {
-    const Hello = (await import(`../../posts/${page.params.slug}.md`));
-    // console.log(Hello.metadata.title);
 
-    // const post = {
-    //   title: page.params.slug,
-    //   date: new Date(),
-    //   body: 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum'
-    // };
+    try {
+      const Post = (await import(`../../posts/${page.params.slug}.md`));
+      // console.log(Hello.metadata.title);
 
-    // common use case here is to hit an API and return the data as props
+      // const post = {
+      //   title: page.params.slug,
+      //   date: new Date(),
+      //   body: 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum'
+      // };
 
-    return {
-      props: {
-        // post,
-        Hello: Hello.default,
-        title: Hello.metadata.title
+      // common use case here is to hit an API and return the data as props
+
+      return {
+        // Props are data passed into svelte components
+        props: {
+          // post,
+          Post: Post.default,
+          // title: Post.metadata.title
+        }
+      }
+
+    } catch(e) {
+
+      // redirect example - return status and redirect path
+      // return {
+      //   status: 303,
+      //   redirect: '/posts'
+      // }
+
+      // 404 example - return status and error message
+      return {
+        status: 404,
+        error: 'Post not found'
       }
     }
+
   }
 </script>
 
@@ -46,7 +65,7 @@ import { page } from "$app/stores";
 
   // need to export returned data to make it available to html
   // export let post;
-  export let Hello;
+  export let Post;
   export let title;
 </script>
 
@@ -54,6 +73,8 @@ import { page } from "$app/stores";
 
 <!-- <p>{post.body}</p> -->
 
-<h2>{title}</h2>
+<!-- <h2>{title}</h2> -->
 
-<Hello />
+<!-- <Hello /> -->
+
+<Post />

@@ -29,8 +29,9 @@
       <li><a href="/posts/">Home</a></li>
       <li><a href="/posts/about">About</a></li>
       {#each posts as post}
-        <li><a href={`/posts/${post.slug}`}>{post.title}</a></li>
+      <li><a sveltekit:noscroll href={`/posts/${post.slug}`}>{post.title}</a></li>
       {/each}
+      <li><a rel="external" href="https://leveluptutorials.com">levelup</a></li>
     </ul>
   </aside>
 </div>

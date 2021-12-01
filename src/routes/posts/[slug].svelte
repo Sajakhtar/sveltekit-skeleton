@@ -66,7 +66,7 @@ import { page } from "$app/stores";
   // need to export returned data to make it available to html
   // export let post;
   export let Post;
-  export let title;
+  // export let title;
 </script>
 
 <!-- <h3>{post.title}</h3> -->
@@ -77,4 +77,5 @@ import { page } from "$app/stores";
 
 <!-- <Hello /> -->
 
-<Post />
+<!-- <Post /> -->
+<svelte:component this={Post}/>
